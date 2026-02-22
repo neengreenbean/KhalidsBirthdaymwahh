@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Happy Birthday 💕</title>
+
+  <style>
+
+@font-face {
+  font-family: 'Dialog Lisan';
+  src: url('fonts/Dialog Lisan.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+    body {
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(135deg, #de2645, #47000c);
+      font-family: "Segoe UI", sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .card {
+      background: #ffedc7;
+      padding: 40px 60px;
+      border-radius: 20px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+      text-align: center;
+      animation: float 3s ease-in-out infinite;
+      position: relative;
+      z-index: 2;
+    }
+
+    h1 {
+  font-family: 'Dialog Lisan', sans-serif;
+  color: #47000c;
+  margin-bottom: 10px;
+  min-height: 48px;
+}
+
+    p {
+      color: #444;
+      font-size: 18px;
+    }
+
+    .hint {
+      font-size: 14px;
+      color: #de2645;
+      margin-top: 10px;
+      opacity: 0.8;
+    }
+
+    /* PLAY BUTTON */
+    .play-wrapper {
+      position: fixed;
+      top: 30px;
+      right: 30px;
+      text-align: center;
+      z-index: 5;
+    }
+
+    .play-btn {
+      width: 70px;
+      height: 70px;
+      background: #ff8095;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+      transition: transform 0.2s ease, opacity 0.5s ease;
+    }
+
+    .play-btn:hover {
+      transform: scale(1.08);
+    }
+
+    .triangle {
+      width: 0;
+      height: 0;
+      border-left: 18px solid white;
+      border-top: 12px solid transparent;
+      border-bottom: 12px solid transparent;
+      margin-left: 4px;
+    }
+
+    .play-text {
+      margin-top: 6px;
+      font-size: 14px;
+      color: #fff7e6;
+    }
+
+    .play-wrapper.hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    /* Cake */
+    .cake {
+      margin: 80px auto 10px auto;
+      width: 180px;
+      height: 120px;
+      background: #ffc64d;
+      border-radius: 0 0 25px 25px;
+      position: relative;
+      overflow: visible;
+    }
+
+.cake .logo {
+  position: absolute; /* positions relative to .cake */
+  bottom: 25px;       /* distance from bottom of cake */
+  left: 50%;          /* horizontally center */
+  transform: translateX(-50%); /* true horizontal center */
+  width: 80px;        /* adjust size */
+  height: auto;       /* keep aspect ratio */
+  pointer-events: none; /* optional: so it doesn't block candle clicks */
+    }
+
+    .icing {
+      position: absolute;
+      top: -25px;
+      left: 0;
+      width: 100%;
+      height: 50px;
+      background: #fff;
+      border-radius: 50% 50% 20px 20px;
+    }
+
+    .icing::before,
+    .icing::after {
+      content: "";
+      position: absolute;
+      bottom: -20px;
+      width: 30px;
+      height: 50px;
+      background: #fff;
+      border-radius: 50%;
+      animation: melt 4s ease-in-out infinite;
+    }
+
+    .icing::before { left: 30px; }
+    .icing::after  { right: 40px; animation-delay: 2s; }
+
+    .candle {
+      position: absolute;
+      top: -60px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 10px;
+      height: 40px;
+      background: #fff;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    .candle:hover {
+      transform: translateX(-50%) scale(1.05);
+    }
+
+    .flame {
+      position: absolute;
+      top: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 14px;
+      height: 20px;
+      background: orange;
+      border-radius: 50%;
+      animation: flicker 0.15s infinite;
+    }
+
+    .flame.off { display: none; }
+
+    .wish {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 48px;
+      color: #ff4f8b;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 1s ease;
+      z-index: 3;
+    }
+
+    .wish.show {
+      opacity: 0.7;
+    }
+
+    .confetti {
+      position: fixed;
+      width: 10px;
+      height: 10px;
+      top: -10px;
+      animation: fall 3s linear forwards;
+      z-index: 1;
+    }
+
+    @keyframes fall {
+      to {
+        transform: translateY(110vh) rotate(720deg);
+        opacity: 0;
+      }
+    }
+
+    @keyframes flicker {
+      0% { transform: translateX(-50%) scale(1); opacity: 1; }
+      50% { transform: translateX(-50%) scale(0.9); opacity: 0.7; }
+      100% { transform: translateX(-50%) scale(1); opacity: 1; }
+    }
+
+    @keyframes melt {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(4px); }
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .footer {
+      margin-top: 30px;
+      font-size: 14px;
+      color: #777;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- PLAY BUTTON -->
+  <div class="play-wrapper" id="playWrapper">
+    <div class="play-btn" onclick="playMusic()">
+      <div class="triangle"></div>
+    </div>
+    <div class="play-text">play</div>
+  </div>
+
+  <div class="card">
+    <h1 id="typewriter"></h1>
+
+    <p>
+      I may not know what I'm doing,<br>
+      but I wish you the happiest birthday baby.
+    </p>
+
+<div class="cake">
+  <div class="icing"></div>
+  <div class="candle" onclick="blowCandle()">
+    <div class="flame" id="flame"></div>
+  </div>
+
+  <!-- Batman logo -->
+  <img src="batman.png" class="logo">
+</div>
+
+    <div class="hint">make a wish & click the candle 🎂</div>
+
+    <p>You’re my favorite bug ❤️</p>
+
+    <div class="footer">I love you Khalid.</div>
+  </div>
+
+  <div class="wish" id="wishText">I hope your wish comes true ✨</div>
+
+  <!-- MUSIC -->
+  <audio id="music">
+    <source src="hbd.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    // Typewriter
+    const text = "Happy Birthday my love 💖";
+    let index = 0;
+    const speed = 120;
+    const target = document.getElementById("typewriter");
+
+    function typeWriter() {
+      if (index < text.length) {
+        target.innerHTML += text.charAt(index);
+        index++;
+        setTimeout(typeWriter, speed);
+      }
+    }
+    typeWriter();
+
+    function playMusic() {
+      document.getElementById("music").play();
+      document.getElementById("playWrapper").classList.add("hidden");
+    }
+
+    function blowCandle() {
+      document.getElementById("flame").classList.add("off");
+
+      const wish = document.getElementById("wishText");
+      wish.classList.add("show");
+      setTimeout(() => wish.classList.remove("show"), 2500);
+
+      for (let i = 0; i < 40; i++) {
+        const confetti = document.createElement("div");
+        confetti.className = "confetti";
+        confetti.style.left = Math.random() * 100 + "vw";
+        confetti.style.background =
+          ["#ff4f8b", "#ffc0cb", "#fff7e6", "#ff7aa2"]
+          [Math.floor(Math.random() * 4)];
+        confetti.style.animationDuration = 2 + Math.random() * 2 + "s";
+        document.body.appendChild(confetti);
+        setTimeout(() => confetti.remove(), 3000);
+      }
+    }
+  </script>
+
+</body>
+</html>
