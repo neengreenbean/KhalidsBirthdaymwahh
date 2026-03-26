@@ -2,17 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Happy Birthday 💕</title>
-<title>Khalid’s Birthday | HB Design</title>
-
-<meta name="description" content="A custom-designed birthday webpage created by HB Design. Interactive, personal, and handcrafted.">
-
-<meta name="keywords" content="birthday website, custom web design, HB Design, personal website">
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Khalid’s Birthday | HB Design</title>
+  <meta name="description" content="A custom-designed birthday webpage created by HB Design. Interactive, personal, and handcrafted.">
+  <meta name="keywords" content="birthday website, custom web design, HB Design, personal website">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <style>
-
 @font-face {
   font-family: 'Dialog Lisan';
   src: url('fonts/Dialog Lisan.otf') format('opentype');
@@ -20,254 +15,215 @@
   font-style: normal;
 }
 
-    body {
+body {
   margin: 0;
   padding-top: 80px;
-  min-height: 100vh; /* allows expansion */
+  min-height: 100vh;
   background: linear-gradient(135deg, #d9ffea, #00a64b);
   font-family: "Segoe UI", sans-serif;
   display: flex;
-  flex-direction: column; /* stack vertically */
+  flex-direction: column;
   align-items: center;
-  justify-content: flex-start; /* start from top */
-  overflow-x: hidden; /* keep horizontal clean */
+  justify-content: flex-start;
+  overflow-x: hidden;
 }
 
-    .card {
-      background: #ffbad2;
-      padding: 40px 60px;
-      border-radius: 20px;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-      text-align: center;
-      animation: float 3s ease-in-out infinite;
-      position: relative;
-      z-index: 2;
-    }
+.card {
+  background: #ffbad2;
+  padding: 40px 60px;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+  text-align: center;
+  animation: float 3s ease-in-out infinite;
+  position: relative;
+  z-index: 2;
+  margin-top: 20px;
+}
 
-    h1 {
+h1 {
   font-family: 'Dialog Lisan', sans-serif;
   color: #47000c;
   margin-bottom: 10px;
   min-height: 48px;
 }
 
-    p {
-      color: #444;
-      font-size: 18px;
-    }
+p {
+  color: #444;
+  font-size: 18px;
+}
 
-    .hint {
-      font-size: 14px;
-      color: #a6003a;
-      margin-top: 10px;
-      opacity: 0.8;
-    }
+.hint {
+  font-size: 14px;
+  color: #a6003a;
+  margin-top: 10px;
+  opacity: 0.8;
+}
 
-    /* PLAY BUTTON */
-    .play-wrapper {
-      position: fixed;
-      top: 30px;
-      right: 30px;
-      text-align: center;
-      z-index: 5;
-    }
+.play-wrapper {
+  position: fixed;
+  top: 30px;
+  right: 30px;
+  text-align: center;
+  z-index: 5;
+}
 
-    .play-btn {
-      width: 70px;
-      height: 70px;
-      background: #ff8095;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-      transition: transform 0.2s ease, opacity 0.5s ease;
-    }
+.play-btn {
+  width: 70px;
+  height: 70px;
+  background: #ff8095;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+  transition: transform 0.2s ease, opacity 0.5s ease;
+}
 
-    .play-btn:hover {
-      transform: scale(1.08);
-    }
+.play-btn:hover { transform: scale(1.08); }
 
-    .triangle {
-      width: 0;
-      height: 0;
-      border-left: 18px solid white;
-      border-top: 12px solid transparent;
-      border-bottom: 12px solid transparent;
-      margin-left: 4px;
-    }
+.triangle {
+  width: 0;
+  height: 0;
+  border-left: 18px solid white;
+  border-top: 12px solid transparent;
+  border-bottom: 12px solid transparent;
+  margin-left: 4px;
+}
 
-    .play-text {
-      margin-top: 6px;
-      font-size: 14px;
-      color: #fff7e6;
-    }
+.play-text {
+  margin-top: 6px;
+  font-size: 14px;
+  color: #fff7e6;
+}
 
-    .play-wrapper.hidden {
-      opacity: 0;
-      pointer-events: none;
-    }
+.play-wrapper.hidden { opacity: 0; pointer-events: none; }
 
-    /* Cake */
-    .cake {
-      margin: 80px auto 10px auto;
-      width: 180px;
-      height: 120px;
-      background: #ffc64d;
-      border-radius: 0 0 25px 25px;
-      position: relative;
-      overflow: visible;
-    }
+.cake {
+  margin: 80px auto 10px auto;
+  width: 180px;
+  height: 120px;
+  background: #ffc64d;
+  border-radius: 0 0 25px 25px;
+  position: relative;
+  overflow: visible;
+}
 
 .cake .logo {
-  position: absolute; /* positions relative to .cake */
-  bottom: 25px;       /* distance from bottom of cake */
-  left: 50%;          /* horizontally center */
-  transform: translateX(-50%); /* true horizontal center */
-  width: 80px;        /* adjust size */
-  height: auto;       /* keep aspect ratio */
-  pointer-events: none; /* optional: so it doesn't block candle clicks */
-    }
+  position: absolute;
+  bottom: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: auto;
+  pointer-events: none;
+}
 
-    .icing {
-      position: absolute;
-      top: -25px;
-      left: 0;
-      width: 100%;
-      height: 50px;
-      background: #fff;
-      border-radius: 50% 50% 20px 20px;
-    }
+.icing {
+  position: absolute;
+  top: -25px;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  background: #fff;
+  border-radius: 50% 50% 20px 20px;
+}
 
-    .icing::before,
-    .icing::after {
-      content: "";
-      position: absolute;
-      bottom: -20px;
-      width: 30px;
-      height: 50px;
-      background: #fff;
-      border-radius: 50%;
-      animation: melt 4s ease-in-out infinite;
-    }
+.icing::before,
+.icing::after {
+  content: "";
+  position: absolute;
+  bottom: -20px;
+  width: 30px;
+  height: 50px;
+  background: #fff;
+  border-radius: 50%;
+  animation: melt 4s ease-in-out infinite;
+}
 
-    .icing::before { left: 30px; }
-    .icing::after  { right: 40px; animation-delay: 2s; }
+.icing::before { left: 30px; }
+.icing::after  { right: 40px; animation-delay: 2s; }
 
-    .candle {
-      position: absolute;
-      top: -60px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 10px;
-      height: 40px;
-      background: #fff;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: transform 0.2s ease;
-    }
+.candle {
+  position: absolute;
+  top: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 10px;
+  height: 40px;
+  background: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
 
-    .candle:hover {
-      transform: translateX(-50%) scale(1.05);
-    }
+.candle:hover { transform: translateX(-50%) scale(1.05); }
 
-    .flame {
-      position: absolute;
-      top: -20px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 14px;
-      height: 20px;
-      background: orange;
-      border-radius: 50%;
-      animation: flicker 0.15s infinite;
-    }
+.flame {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 14px;
+  height: 20px;
+  background: orange;
+  border-radius: 50%;
+  animation: flicker 0.15s infinite;
+}
 
-    .flame.off { display: none; }
+.flame.off { display: none; }
 
-    .wish {
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      font-size: 48px;
-      color: #ff4f8b;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 1s ease;
-      z-index: 3;
-    }
+.wish {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 48px;
+  color: #ff4f8b;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 1s ease;
+  z-index: 3;
+}
 
-    .wish.show {
-      opacity: 0.7;
-    }
+.wish.show { opacity: 0.7; }
 
-    .confetti {
-      position: fixed;
-      width: 10px;
-      height: 10px;
-      top: -10px;
-      animation: fall 3s linear forwards;
-      z-index: 1;
-    }
+.confetti {
+  position: fixed;
+  width: 10px;
+  height: 10px;
+  top: -10px;
+  animation: fall 3s linear forwards;
+  z-index: 1;
+}
 
-    @keyframes fall {
-      to {
-        transform: translateY(110vh) rotate(720deg);
-        opacity: 0;
-      }
-    }
+@keyframes fall { to { transform: translateY(110vh) rotate(720deg); opacity: 0; } }
+@keyframes flicker { 0% { transform: translateX(-50%) scale(1); opacity: 1; } 50% { transform: translateX(-50%) scale(0.9); opacity: 0.7; } 100% { transform: translateX(-50%) scale(1); opacity: 1; } }
+@keyframes melt { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(4px); } }
+@keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
 
-    @keyframes flicker {
-      0% { transform: translateX(-50%) scale(1); opacity: 1; }
-      50% { transform: translateX(-50%) scale(0.9); opacity: 0.7; }
-      100% { transform: translateX(-50%) scale(1); opacity: 1; }
-    }
+.footer { margin-top: 30px; font-size: 14px; color: #777; }
 
-    @keyframes melt {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(4px); }
-    }
-
-    @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
-    }
-
-    .footer {
-      margin-top: 30px;
-      font-size: 14px;
-      color: #777;
-    }
- .message-box {
+.message-box {
   margin: 80px 20px 80px;
   padding: 40px 30px;
   max-width: 700px;
   width: 90%;
-
   background: #ffccd5;
   border-radius: 25px;
-
   box-shadow: 0 15px 35px rgba(0,0,0,0.2);
-
   text-align: center;
   color: #47000c;
-
   line-height: 1.6;
   font-size: 18px;
 }
 
-.message-box h2 {
-  margin-bottom: 20px;
-  font-family: 'Dialog Lisan', sans-serif;
-}   
+.message-box h2 { margin-bottom: 20px; font-family: 'Dialog Lisan', sans-serif; }   
   </style>
 </head>
 
 <body>
 
-  <!-- PLAY BUTTON -->
   <div class="play-wrapper" id="playWrapper">
     <div class="play-btn" onclick="playMusic()">
       <div class="triangle"></div>
@@ -277,26 +233,18 @@
 
   <div class="card">
     <h1 id="typewriter"></h1>
+    <p>I may not know what I'm doing,<br>but I wish you the happiest birthday baby.</p>
 
-    <p>
-      I may not know what I'm doing,<br>
-      but I wish you the happiest birthday baby.
-    </p>
-
-<div class="cake">
-  <div class="icing"></div>
-  <div class="candle" onclick="blowCandle()">
-    <div class="flame" id="flame"></div>
-  </div>
-
-  <!-- Batman logo -->
-  <img src="batman.png" class="logo">
-</div>
+    <div class="cake">
+      <div class="icing"></div>
+      <div class="candle" onclick="blowCandle()">
+        <div class="flame" id="flame"></div>
+      </div>
+      <img src="batman.png" class="logo">
+    </div>
 
     <div class="hint">make a wish & click the candle 🎂</div>
-
     <p>You’re my favorite bug ❤️</p>
-
     <div class="footer">I love you Khalid.</div>
   </div>
 
@@ -305,84 +253,76 @@
   <div class="message-box">
   <p>
 My Dearest Khalid,<br><br>
-
 Right now we’re on call, and you’re playing me some of your favorite songs.<br>
 I love listening to them with you…<br>
 but your voice will always be my ears’ favorite song.<br><br>
-
 You keep saying you don’t want me to make a big deal out of your birthday,<br>
 but I just want to be there for all your moments<br>
 and remind you how special you truly are to me.<br><br>
-
 I wish I could do so much more.<br>
 I wish I was there with you <br>
 hugging you, holding you close,<br>
 and telling you all of this in person.<br><br>
-
 For now, enjoy this virtual cake…<br>
 until I can bake you a real one, baby.<br><br>
-
 I miss you more than I can explain, hayete,<br>
 and I love you more than words will ever be enough for.<br><br>
-
 I hope you have the kind of birthday you deserve.<br>
 And I hope we get to celebrate every single one together.<br><br>
-
 Happy birthday, baby.<br><br>
-
 XO,<br>
 Haneen
   </p>
 </div>
 
-  <!-- MUSIC -->
   <audio id="music">
     <source src="hbd.mp3" type="audio/mpeg">
   </audio>
 
   <script>
-    // Typewriter
-    const text = "Happy Birthday my love 💖";
-    let index = 0;
-    const speed = 120;
-    const target = document.getElementById("typewriter");
+const text = "Happy Birthday my love 💖";
+let index = 0;
+const speed = 120;
+const target = document.getElementById("typewriter");
 
-    function typeWriter() {
-      if (index < text.length) {
-        target.innerHTML += text.charAt(index);
-        index++;
-        setTimeout(typeWriter, speed);
-      }
-    }
-    typeWriter();
+function typeWriter() {
+  if (index < text.length) {
+    target.innerHTML += text.charAt(index);
+    index++;
+    setTimeout(typeWriter, speed);
+  }
+}
+typeWriter();
 
-    function playMusic() {
-      document.getElementById("music").play();
-      document.getElementById("playWrapper").classList.add("hidden");
-    }
-
-   function blowCandle() {
-  const flame = document.getElementById("flame");
+function playMusic() {
+  document.getElementById("music").play();
+  document.getElementById("playWrapper").classList.add("hidden");
 }
 
-      const wish = document.getElementById("wishText");
-      wish.classList.add("show");
-      setTimeout(() => wish.classList.remove("show"), 2500);
+function blowCandle() {
+  const flame = document.getElementById("flame");
+  if (flame.classList.contains("off")) return;
+  flame.classList.add("off");
 
-      for (let i = 0; i < 40; i++) {
-        const confetti = document.createElement("div");
-        confetti.className = "confetti";
-        confetti.style.left = Math.random() * 100 + "vw";
-        confetti.style.background =
-          ["#ff4f8b", "#ffc0cb", "#fff7e6", "#ff7aa2"]
-          [Math.floor(Math.random() * 4)];
-        confetti.style.animationDuration = 2 + Math.random() * 2 + "s";
-        document.body.appendChild(confetti);
-        setTimeout(() => confetti.remove(), 3000);
-      }
-    }
+  const wish = document.getElementById("wishText");
+  wish.classList.add("show");
+  setTimeout(() => wish.classList.remove("show"), 2500);
+
+  for (let i = 0; i < 40; i++) {
+    const confetti = document.createElement("div");
+    confetti.className = "confetti";
+    confetti.style.left = Math.random() * 100 + "vw";
+    confetti.style.background =
+      ["#ff4f8b", "#ffc0cb", "#fff7e6", "#ff7aa2"]
+      [Math.floor(Math.random() * 4)];
+    confetti.style.animationDuration = 2 + Math.random() * 2 + "s";
+    document.body.appendChild(confetti);
+    setTimeout(() => confetti.remove(), 3000);
+  }
+
+  setTimeout(() => { flame.classList.remove("off"); }, 3000);
+}
   </script>
 
 </body>
-
 </html>
