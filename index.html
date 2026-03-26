@@ -361,8 +361,38 @@ Haneen
       document.getElementById("playWrapper").classList.add("hidden");
     }
 
-    function blowCandle() {
-      document.getElementById("flame").classList.add("off");
+   function blowCandle() {
+  const flame = document.getElementById("flame");
+
+  // If already off, ignore click until it relights
+  if (flame.classList.contains("off")) return;
+
+  // Turn off flame
+  flame.classList.add("off");
+
+  // Show wish text
+  const wish = document.getElementById("wishText");
+  wish.classList.add("show");
+  setTimeout(() => wish.classList.remove("show"), 2500);
+
+  // Confetti
+  for (let i = 0; i < 40; i++) {
+    const confetti = document.createElement("div");
+    confetti.className = "confetti";
+    confetti.style.left = Math.random() * 100 + "vw";
+    confetti.style.background =
+      ["#ff4f8b", "#ffc0cb", "#fff7e6", "#ff7aa2"]
+      [Math.floor(Math.random() * 4)];
+    confetti.style.animationDuration = 2 + Math.random() * 2 + "s";
+    document.body.appendChild(confetti);
+    setTimeout(() => confetti.remove(), 3000);
+  }
+
+  // 🔥 RELIGHT AFTER DELAY
+  setTimeout(() => {
+    flame.classList.remove("off");
+  }, 3000); // adjust timing if you want
+}
 
       const wish = document.getElementById("wishText");
       wish.classList.add("show");
